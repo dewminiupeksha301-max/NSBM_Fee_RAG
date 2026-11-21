@@ -1,56 +1,80 @@
 
 class AnswerGenerator:
-    """Generate answers using retrieved FAQ evidence."""
+    """Generate clear answers using retrieved FAQ evidence."""
+
+    FALLBACK_MESSAGE = (
+        "I could not find supporting information "
+        "in the NSBM FAQ documents. Please contact "
+        "NSBM for confirmation."
+    )
 
     def generate(self, question, results):
-        if not results:
-            return (
-                "I could not find supporting information "
-                "in the NSBM FAQ documents. Please contact "
-                "NSBM for confirmation."
-            )
+        """Generate an answer from relevant FAQ search results."""
+
+        # 1. Validate question
+        if not isinstance(question, str) or not question.strip():
+            return "Please enter a valid question."
+
+        # 2. Validate retrieved results
+        if not results or not isinstance(results, list):
+            return self.FALLBACK_MESSAGE
 
         evidence = []
+        seen_evidence = set()
 
+        # 3. Process retrieved FAQ evidence
         for result in results:
-            text = result.get("text", "").strip()
 
-            if not text:
+            if not isinstance(result, dict):
                 continue
 
-            # Remove the FAQ question heading
-            lines = text.splitlines()
-            answer_lines = []
+            text = result.get("text", "")
 
-            for line in lines:
-                line = line.strip()
+            if not isinstance(text, str) or not text.strip():
+                continue
 
-                if not line:
-                    continue
+            cleaned_text = self._clean_evidence(text)
 
-                # Skip numbered FAQ headings
-                if line[:1].isdigit() and ". " in line[:5]:
-                    continue
+            if not cleaned_text:
+                continue
 
-                # Skip unrelated page headings
-                if line.upper() == "ACADEMIC PROGRAMMES":
-                    continue
+            # 4. Remove duplicate evidence
+            normalized_text = cleaned_text.casefold()
 
-                answer_lines.append(line)
-
-            cleaned_text = " ".join(answer_lines).strip()
-
-            if cleaned_text:
+            if normalized_text not in seen_evidence:
                 evidence.append(cleaned_text)
+                seen_evidence.add(normalized_text)
 
+        # 5. Return fallback if no valid evidence exists
         if not evidence:
-            return (
-                "I could not find supporting information "
-                "in the NSBM FAQ documents. Please contact "
-                "NSBM for confirmation."
-            )
+            return self.FALLBACK_MESSAGE
 
+        # 6. Generate final answer
         return (
             "Based on the available NSBM FAQ information:\n"
             + "\n".join(evidence)
         )
+
+    def _clean_evidence(self, text):
+        """Remove FAQ headings and unrelated page headings."""
+
+        lines = text.splitlines()
+        answer_lines = []
+
+        for line in lines:
+            line = line.strip()
+
+            if not line:
+                continue
+
+            # Skip numbered FAQ headings
+            if line[:1].isdigit() and ". " in line[:5]:
+                continue
+
+            # Skip unrelated page headings
+            if line.upper() == "ACADEMIC PROGRAMMES":
+                continue
+
+            answer_lines.append(line)
+
+        return " ".join(answer_lines).strip()

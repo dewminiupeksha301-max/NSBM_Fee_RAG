@@ -1,0 +1,53 @@
+
+[
+  {
+    "question": "How can I pay my tuition fees?",
+    "answer": "Students can pay through approved online payment gateways, partner banks, or other university-approved methods.",
+    "context": "Students can make payments through approved online payment gateways, partner banks, or other payment methods specified by the university."
+  },
+  {
+    "question": "Can fees be paid in instalments?",
+    "answer": "Yes. Programme fees are subject to installment payment plans.",
+    "context": "Programme fees are subject to installment payment plans."
+  },
+  {
+    "question": "Does NSBM accept international students?",
+    "answer": "Yes. Students from many countries can apply for degree programmes at NSBM.",
+    "context": "Students from many countries are welcome to apply for degree programmes at NSBM."
+  },
+  {
+    "question": "What payment methods are available?",
+    "answer": "Approved online payment gateways, partner banks, and other university-specified methods are available.",
+    "context": "Students can make payments through approved online payment gateways, partner banks, or other payment methods specified by the university."
+  },
+  {
+    "question": "Can international students apply?",
+    "answer": "Yes. International students can apply for degree programmes at NSBM.",
+    "context": "Students from many countries are welcome to apply for degree programmes at NSBM."
+  },
+  {
+    "question": "How do students pay their fees?",
+    "answer": "Students can use approved online payment gateways, partner banks, or other methods specified by the university.",
+    "context": "Students can make payments through approved online payment gateways, partner banks, or other payment methods specified by the university."
+  },
+  {
+    "question": "Are installment payment plans available?",
+    "answer": "Yes. Programme fees are subject to installment payment plans.",
+    "context": "Programme fees are subject to installment payment plans."
+  },
+  {
+    "question": "How long do undergraduate degree programmes take?",
+    "answer": "Most undergraduate degree programmes take 3 to 4 years to complete.",
+    "context": "Most undergraduate degree programmes are completed within 3 to 4 years, while postgraduate programmes typically range from 1 to 2 years."
+  },
+  {
+    "question": "How long do postgraduate programmes take?",
+    "answer": "Postgraduate programmes typically take 1 to 2 years.",
+    "context": "Most undergraduate degree programmes are completed within 3 to 4 years, while postgraduate programmes typically range from 1 to 2 years."
+  },
+  {
+    "question": "Can students pay through partner banks?",
+    "answer": "Yes. Partner banks are among the payment methods specified by the university.",
+    "context": "Students can make payments through approved online payment gateways, partner banks, or other payment methods specified by the university."
+  }
+]

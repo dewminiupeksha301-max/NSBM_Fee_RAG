@@ -1,79 +1,79 @@
-﻿method,record_type,question,retrieved_text,generated_answer,expected_answer,context_relevance,faithfulness,answer_relevance
+﻿method,record_type,question,retrieved_text,generated_answer,expected_answer,context_relevance,faithfulness,precision,recall,f1_score
 TF-IDF,Question,How can I pay my tuition fees?,"6. How can I pay my tuition fees?
 Students can make payments through approved online payment gateways, partner banks, or other payment methods specified
-by the university.",,"Students can pay through approved online payment gateways, partner banks, or other university-approved methods.",1.0,0.857,0.286
+by the university.",,"Students can pay through approved online payment gateways, partner banks, or other university-approved methods.",1.0,1.0,0.72,1.0,0.837
 TF-IDF,Question,Can fees be paid in instalments?,"7. Can fees be paid in instalments
 Programme fees are subject to installment payment plans.
-ACADEMIC PROGRAMMES",,Yes. Programme fees are subject to installment payment plans.,1.0,0.889,0.167
+ACADEMIC PROGRAMMES",,Yes. Programme fees are subject to installment payment plans.,1.0,0.889,0.5,1.0,0.667
 TF-IDF,Question,Does NSBM accept international students?,"5. Does NSBM accept international students?
-Yes. Students from many countries are welcome to apply for degree programmes at NSBM.",,Yes. Students from many countries can apply for degree programmes at NSBM.,1.0,0.917,0.0
+Yes. Students from many countries are welcome to apply for degree programmes at NSBM.",,Yes. Students from many countries can apply for degree programmes at NSBM.,1.0,0.917,0.722,1.0,0.839
 TF-IDF,Question,What payment methods are available?,"6. How can I pay my tuition fees?
 Students can make payments through approved online payment gateways, partner banks, or other payment methods specified
-by the university.",,"Approved online payment gateways, partner banks, and other university-specified methods are available.",1.0,0.667,0.6
+by the university.",,"Approved online payment gateways, partner banks, and other university-specified methods are available.",1.0,0.769,0.72,1.0,0.837
 TF-IDF,Question,Can international students apply?,"5. Does NSBM accept international students?
-Yes. Students from many countries are welcome to apply for degree programmes at NSBM.",,Yes. International students can apply for degree programmes at NSBM.,1.0,0.9,0.75
+Yes. Students from many countries are welcome to apply for degree programmes at NSBM.",,Yes. International students can apply for degree programmes at NSBM.,1.0,0.9,0.722,1.0,0.839
 TF-IDF,Question,How do students pay their fees?,"6. How can I pay my tuition fees?
 Students can make payments through approved online payment gateways, partner banks, or other payment methods specified
-by the university.",,"Students can use approved online payment gateways, partner banks, or other methods specified by the university.",1.0,0.938,0.167
+by the university.",,"Students can use approved online payment gateways, partner banks, or other methods specified by the university.",1.0,0.938,0.72,1.0,0.837
 TF-IDF,Question,Are installment payment plans available?,"7. Can fees be paid in instalments
 Programme fees are subject to installment payment plans.
-ACADEMIC PROGRAMMES",,Yes. Programme fees are subject to installment payment plans.,1.0,0.889,0.6
+ACADEMIC PROGRAMMES",,Yes. Programme fees are subject to installment payment plans.,1.0,0.889,0.5,1.0,0.667
 TF-IDF,Question,How long do undergraduate degree programmes take?,"4. How long do degree programmes take to complete?
 Most undergraduate degree programmes are completed within 3 to 4 years, while postgraduate programmes typically range
-from 1 to 2 years.",,Most undergraduate degree programmes take 3 to 4 years to complete.,1.0,0.8,0.429
+from 1 to 2 years.",,Most undergraduate degree programmes take 3 to 4 years to complete.,1.0,1.0,0.783,1.0,0.878
 TF-IDF,Question,How long do postgraduate programmes take?,"4. How long do degree programmes take to complete?
 Most undergraduate degree programmes are completed within 3 to 4 years, while postgraduate programmes typically range
-from 1 to 2 years.",,Postgraduate programmes typically take 1 to 2 years.,1.0,1.0,0.333
+from 1 to 2 years.",,Postgraduate programmes typically take 1 to 2 years.,1.0,1.0,0.783,1.0,0.878
 TF-IDF,Question,Can students pay through partner banks?,"6. How can I pay my tuition fees?
 Students can make payments through approved online payment gateways, partner banks, or other payment methods specified
-by the university.",,Yes. Partner banks are among the payment methods specified by the university.,1.0,0.636,0.167
-TF-IDF,Average,,,,,1.0,0.849,0.35
+by the university.",,Yes. Partner banks are among the payment methods specified by the university.,1.0,0.727,0.72,1.0,0.837
+TF-IDF,Average,,,,,1.0,0.903,0.689,1.0,0.812
 ChromaDB Vector Store,Question,How can I pay my tuition fees?,"6. How can I pay my tuition fees?
 Students can make payments through approved online payment gateways, partner banks, or other payment methods specified
-by the university.",,"Students can pay through approved online payment gateways, partner banks, or other university-approved methods.",1.0,0.857,0.286
+by the university.",,"Students can pay through approved online payment gateways, partner banks, or other university-approved methods.",1.0,1.0,0.72,1.0,0.837
 ChromaDB Vector Store,Question,Can fees be paid in instalments?,"7. Can fees be paid in instalments
 Programme fees are subject to installment payment plans.
-ACADEMIC PROGRAMMES",,Yes. Programme fees are subject to installment payment plans.,1.0,0.889,0.167
+ACADEMIC PROGRAMMES",,Yes. Programme fees are subject to installment payment plans.,1.0,0.889,0.5,1.0,0.667
 ChromaDB Vector Store,Question,Does NSBM accept international students?,"5. Does NSBM accept international students?
-Yes. Students from many countries are welcome to apply for degree programmes at NSBM.",,Yes. Students from many countries can apply for degree programmes at NSBM.,1.0,0.917,0.0
+Yes. Students from many countries are welcome to apply for degree programmes at NSBM.",,Yes. Students from many countries can apply for degree programmes at NSBM.,1.0,0.917,0.722,1.0,0.839
 ChromaDB Vector Store,Question,What payment methods are available?,"7. Can fees be paid in instalments
 Programme fees are subject to installment payment plans.
-ACADEMIC PROGRAMMES",,"Approved online payment gateways, partner banks, and other university-specified methods are available.",0.111,0.167,0.6
+ACADEMIC PROGRAMMES",,"Approved online payment gateways, partner banks, and other university-specified methods are available.",0.111,0.154,0.125,0.111,0.118
 ChromaDB Vector Store,Question,Can international students apply?,"5. Does NSBM accept international students?
-Yes. Students from many countries are welcome to apply for degree programmes at NSBM.",,Yes. International students can apply for degree programmes at NSBM.,1.0,0.9,0.75
+Yes. Students from many countries are welcome to apply for degree programmes at NSBM.",,Yes. International students can apply for degree programmes at NSBM.,1.0,0.9,0.722,1.0,0.839
 ChromaDB Vector Store,Question,How do students pay their fees?,"6. How can I pay my tuition fees?
 Students can make payments through approved online payment gateways, partner banks, or other payment methods specified
-by the university.",,"Students can use approved online payment gateways, partner banks, or other methods specified by the university.",1.0,0.938,0.167
+by the university.",,"Students can use approved online payment gateways, partner banks, or other methods specified by the university.",1.0,0.938,0.72,1.0,0.837
 ChromaDB Vector Store,Question,Are installment payment plans available?,"7. Can fees be paid in instalments
 Programme fees are subject to installment payment plans.
-ACADEMIC PROGRAMMES",,Yes. Programme fees are subject to installment payment plans.,1.0,0.889,0.6
+ACADEMIC PROGRAMMES",,Yes. Programme fees are subject to installment payment plans.,1.0,0.889,0.5,1.0,0.667
 ChromaDB Vector Store,Question,How long do undergraduate degree programmes take?,"4. How long do degree programmes take to complete?
 Most undergraduate degree programmes are completed within 3 to 4 years, while postgraduate programmes typically range
-from 1 to 2 years.",,Most undergraduate degree programmes take 3 to 4 years to complete.,1.0,0.8,0.429
+from 1 to 2 years.",,Most undergraduate degree programmes take 3 to 4 years to complete.,1.0,1.0,0.783,1.0,0.878
 ChromaDB Vector Store,Question,How long do postgraduate programmes take?,"4. How long do degree programmes take to complete?
 Most undergraduate degree programmes are completed within 3 to 4 years, while postgraduate programmes typically range
-from 1 to 2 years.",,Postgraduate programmes typically take 1 to 2 years.,1.0,1.0,0.333
+from 1 to 2 years.",,Postgraduate programmes typically take 1 to 2 years.,1.0,1.0,0.783,1.0,0.878
 ChromaDB Vector Store,Question,Can students pay through partner banks?,"6. How can I pay my tuition fees?
 Students can make payments through approved online payment gateways, partner banks, or other payment methods specified
-by the university.",,Yes. Partner banks are among the payment methods specified by the university.,1.0,0.636,0.167
-ChromaDB Vector Store,Average,,,,,0.911,0.799,0.35
+by the university.",,Yes. Partner banks are among the payment methods specified by the university.,1.0,0.727,0.72,1.0,0.837
+ChromaDB Vector Store,Average,,,,,0.911,0.841,0.629,0.911,0.74
 RAG Pipeline,Question,How can I pay my tuition fees?,,"Based on the available NSBM FAQ information:
-Students can make payments through approved online payment gateways, partner banks, or other payment methods specified by the university.","Students can pay through approved online payment gateways, partner banks, or other university-approved methods.",1.0,0.786,0.143
+Students can make payments through approved online payment gateways, partner banks, or other payment methods specified by the university.","Students can pay through approved online payment gateways, partner banks, or other university-approved methods.",1.0,0.929,0.542,0.929,0.684
 RAG Pipeline,Question,Can fees be paid in instalments?,,"Based on the available NSBM FAQ information:
-Programme fees are subject to installment payment plans.",Yes. Programme fees are subject to installment payment plans.,1.0,0.889,0.167
+Programme fees are subject to installment payment plans.",Yes. Programme fees are subject to installment payment plans.,1.0,0.889,0.533,0.889,0.667
 RAG Pipeline,Question,Does NSBM accept international students?,,"Based on the available NSBM FAQ information:
-Yes. Students from many countries are welcome to apply for degree programmes at NSBM.",Yes. Students from many countries can apply for degree programmes at NSBM.,1.0,0.917,0.2
+Yes. Students from many countries are welcome to apply for degree programmes at NSBM.",Yes. Students from many countries can apply for degree programmes at NSBM.,1.0,0.917,0.55,0.917,0.687
 RAG Pipeline,Question,What payment methods are available?,,"Based on the available NSBM FAQ information:
-Students can make payments through approved online payment gateways, partner banks, or other payment methods specified by the university.","Approved online payment gateways, partner banks, and other university-specified methods are available.",1.0,0.667,0.4
+Students can make payments through approved online payment gateways, partner banks, or other payment methods specified by the university.","Approved online payment gateways, partner banks, and other university-specified methods are available.",1.0,0.846,0.458,0.846,0.595
 RAG Pipeline,Question,Can international students apply?,,"Based on the available NSBM FAQ information:
-Yes. Students from many countries are welcome to apply for degree programmes at NSBM.",Yes. International students can apply for degree programmes at NSBM.,1.0,0.8,0.25
+Yes. Students from many countries are welcome to apply for degree programmes at NSBM.",Yes. International students can apply for degree programmes at NSBM.,1.0,0.8,0.4,0.8,0.533
 RAG Pipeline,Question,How do students pay their fees?,,"Based on the available NSBM FAQ information:
-Students can make payments through approved online payment gateways, partner banks, or other payment methods specified by the university.","Students can use approved online payment gateways, partner banks, or other methods specified by the university.",1.0,0.938,0.167
+Students can make payments through approved online payment gateways, partner banks, or other payment methods specified by the university.","Students can use approved online payment gateways, partner banks, or other methods specified by the university.",1.0,0.938,0.625,0.938,0.75
 RAG Pipeline,Question,Are installment payment plans available?,,"Based on the available NSBM FAQ information:
-Programme fees are subject to installment payment plans.",Yes. Programme fees are subject to installment payment plans.,1.0,0.889,0.6
+Programme fees are subject to installment payment plans.",Yes. Programme fees are subject to installment payment plans.,1.0,0.889,0.533,0.889,0.667
 RAG Pipeline,Question,How long do undergraduate degree programmes take?,,"Based on the available NSBM FAQ information:
-Most undergraduate degree programmes are completed within 3 to 4 years, while postgraduate programmes typically range from 1 to 2 years.",Most undergraduate degree programmes take 3 to 4 years to complete.,1.0,0.7,0.429
+Most undergraduate degree programmes are completed within 3 to 4 years, while postgraduate programmes typically range from 1 to 2 years.",Most undergraduate degree programmes take 3 to 4 years to complete.,1.0,0.8,0.32,0.8,0.457
 RAG Pipeline,Question,How long do postgraduate programmes take?,,"Based on the available NSBM FAQ information:
-Most undergraduate degree programmes are completed within 3 to 4 years, while postgraduate programmes typically range from 1 to 2 years.",Postgraduate programmes typically take 1 to 2 years.,1.0,0.875,0.333
+Most undergraduate degree programmes are completed within 3 to 4 years, while postgraduate programmes typically range from 1 to 2 years.",Postgraduate programmes typically take 1 to 2 years.,1.0,0.875,0.28,0.875,0.424
 RAG Pipeline,Question,Can students pay through partner banks?,,"Based on the available NSBM FAQ information:
-Students can make payments through approved online payment gateways, partner banks, or other payment methods specified by the university.",Yes. Partner banks are among the payment methods specified by the university.,1.0,0.636,0.667
+Students can make payments through approved online payment gateways, partner banks, or other payment methods specified by the university.",Yes. Partner banks are among the payment methods specified by the university.,1.0,0.727,0.333,0.727,0.457

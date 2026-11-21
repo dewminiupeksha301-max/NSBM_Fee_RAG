@@ -10,13 +10,13 @@ from text_chunker import TextChunker
 
 
 class RAGPipeline:
-    """Connect TF-IDF, ChromaDB, agent, and answer generator."""
+    """Connect document processing, retrieval, agent and answer generation."""
 
     def __init__(self):
         self.vector_store = VectorStore()
         self.answer_generator = AnswerGenerator()
 
-        # Load FAQ documents for TF-IDF search
+        # 1. Locate FAQ documents
         base_folder = Path(__file__).parent
         data_folder = base_folder / "data"
 
@@ -32,48 +32,93 @@ class RAGPipeline:
                 "No NSBM FAQ PDF or TXT file found in the data folder."
             )
 
+        # 2. Extract document text
         processor = TextProcessor()
         pages = processor.extract_text(selected_file)
 
+        if not pages:
+            raise ValueError(
+                "No text could be extracted from the FAQ document."
+            )
+
+        # 3. Split extracted text into chunks
         chunker = TextChunker()
         chunks = chunker.split_pages(pages)
 
+        if not chunks:
+            raise ValueError(
+                "No text chunks were created from the FAQ document."
+            )
+
+        # 4. Initialize TF-IDF retriever
         self.retriever = Retriever()
         self.retriever.fit(chunks)
 
+        # 5. Initialize FAQ agent
         self.agent = NSBMFaqAgent(
             self.vector_store,
             self.answer_generator
         )
 
-    
     def ask(self, question):
-        # Use the agent's relevance check
+        """Retrieve relevant FAQ evidence and generate an answer."""
+
+        # 1. Validate user question
+        if not isinstance(question, str) or not question.strip():
+            return {
+                "question": question if isinstance(question, str) else "",
+                "reasoning": "Invalid or empty question.",
+                "results": [],
+                "answer": "Please enter a valid question.",
+                "status": "error"
+            }
+
+        question = question.strip()
+
+        # 2. Search using ChromaDB through the agent
         response = self.agent.run(question)
 
-        # If the agent finds no relevant FAQ, return fallback
-        if not response["results"]:
+        if not response.get("results"):
             return response
 
-        # Prefer the TF-IDF result when it has a positive score
-        tfidf_results = self.retriever.search(
-            question,
-            top_k=1
-        )
+        # 3. Search using TF-IDF
+        try:
+            tfidf_results = self.retriever.search(
+                question,
+                top_k=1
+            )
+        except Exception:
+            tfidf_results = []
 
-        if tfidf_results and tfidf_results[0]["score"] > 0:
+        # 4. Select the best available evidence
+        if tfidf_results and tfidf_results[0].get("score", 0) > 0:
+
             best = tfidf_results[0]
 
-            response["results"] = [{
+            selected_result = {
                 "text": best["text"],
                 "source": best["source"],
                 "page": best["page"],
                 "distance": 0.0
-            }]
+            }
 
+            response["results"] = [selected_result]
+
+            # 5. Generate answer using selected evidence
             response["answer"] = self.answer_generator.generate(
                 question,
-                response["results"]
+                [selected_result]
             )
 
+            response["reasoning"] = (
+                "Relevant FAQ evidence was retrieved using "
+                "ChromaDB and refined using TF-IDF retrieval."
+            )
+
+            response["retrieval_method"] = "ChromaDB + TF-IDF"
+
+        else:
+            response["retrieval_method"] = "ChromaDB"
+
+        # 6. Return final response
         return response
